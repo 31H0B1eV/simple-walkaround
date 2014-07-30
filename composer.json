@@ -1,0 +1,14 @@
+{
+    "require-dev": {
+        "mockery/mockery": "dev-master"
+    },
+
+    "autoload": {
+        "classmap": [
+                "Calculator.php",
+                "Addition.php",
+                "Operator.php",
+                "Multiplication.php"
+            ]
+    }
+}
