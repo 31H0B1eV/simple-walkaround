@@ -19,10 +19,18 @@ class CalculatorTest extends PHPUnit_Framework_TestCase {
      */
     public function testAddsNumbers()
     {
-        $this->calc->setOperands(5);
-        $this->calc->setOperation(new Addition);
-        $result = $this->calc->calculate(); 
+        $mock = Mockery::mock('Addition');
 
+        $mock->shouldReceive('run')
+            ->once()
+            ->with(5, 0)
+            ->andReturn(5);
+
+        $this->calc->setOperands(5);
+
+        $this->calc->setOperation($mock);
+
+        $result = $this->calc->calculate();
         $this->assertEquals(5, $result);
     }
 
