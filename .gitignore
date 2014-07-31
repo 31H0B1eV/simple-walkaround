@@ -1,3 +1,4 @@
 .phpcomplete_extended/
 .idea/
 composer.lock
+composer.phar
